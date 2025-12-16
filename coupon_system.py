@@ -61,7 +61,7 @@ def github_save_json(path, data):
 
 # 🔐 CONFIG — Edit these. Changing ANY value forces reset.
 COUPON_CODE = "WELCOME50"       # ← Change this to rotate
-COUPON_CREDITS = 10
+COUPON_CREDITS = 15
 MAX_USES = 50
 VALID_HOURS = 24
 
@@ -176,4 +176,5 @@ def sync_user_from_main(user_id: int, balance: int, credits_used: int):
     user["credits_used"] = credits_used
     user.setdefault("redeemed_coupons", [])
     users[uid] = user
+
     _save_json(USERS_FILE, users)
